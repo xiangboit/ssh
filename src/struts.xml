@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<constant name="struts.action.extension" value="action,do"/>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<constant name="struts.ui.theme" value="simple"/>
+	
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="info_*" class="infoAction" method="{1}">
+			<result name="list">/index.jsp</result>
+			<result name="addUI">/addUI.jsp</result>
+			<result name="updateUI">/updateUI.jsp</result>
+			<result name="tolist" type="redirectAction">info_list.action</result>
+		</action>
+	
+	</package>
+
+</struts>
